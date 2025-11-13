@@ -1,6 +1,6 @@
 import { LucideIcon } from "lucide-react";
 import { AuthUser } from "aws-amplify/auth";
-import { Manager, Tenant, Property, Application } from "./prismaTypes";
+import { Manager, Tenant, Property, Application, JsonObject, JsonPrimitive, JsonArray } from "./prismaTypes";
 import { MotionProps as OriginalMotionProps } from "framer-motion";
 
 declare module "framer-motion" {
@@ -81,17 +81,13 @@ declare global {
     propertyId: number;
   }
 
-  interface PropertyOverviewProps {
-    propertyId: number;
-  }
-
   interface PropertyLocationProps {
     propertyId: number;
   }
 
   interface ApplicationCardProps {
     application: Application;
-    userType: "manager" | "renter";
+    userType: "manager" | "renter" ;
     children: React.ReactNode;
   }
 
